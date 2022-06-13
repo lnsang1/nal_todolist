@@ -18,6 +18,15 @@ POST /api/v1/works
 Accept: application/json
 Content-Type: application/json
 
+Request body:
+{
+    "name": "reading book",
+    "status": "PLANNING",
+    "startDate": "2022-06-12 16:48:00",
+    "endDate": "2022-06-12 17:48:00"
+}
+
+Response:
 {
     "code": 200,
     "message": "OK",
