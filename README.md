@@ -8,7 +8,7 @@ Restful API implemented using Spring Boot for a TODO list
 * Build the project by running `mvn clean package` inside todolist module
 * Once successfully built, run the service by using the following command:
 ```
-java -jar todolist/target/todolist-0.0.1-SNAPSHOT.war
+java -jar target/todolist-0.0.1-SNAPSHOT.war
 ```
 
 ## REST APIs Endpoints
@@ -65,7 +65,7 @@ Content-Type: application/json
 }
 
 ```
-### Fetch a Work
+### Fetch Work have paging and sorting
 ```
 GET /api/v1/works?isSortAsc=<true or false>&page=<this is current page>&size=<this is size of the page>
 Accept: application/json
