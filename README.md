@@ -10,6 +10,40 @@ Restful API implemented using Spring Boot for a TODO list
 ```
 java -jar target/todolist-0.0.1-SNAPSHOT.war
 ```
+## Running the project with MySQL
+
+### In pom.xml add: 
+
+```
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+```
+
+### Append this to the end of application.properties: 
+
+```
+---
+#==== connect to mysql ======#
+spring.datasource.url=jdbc:mysql://<your_mysql_host_or_ip>/todolist?serverTimezone=UTC&characterEncoding=utf-8&useSSL=false
+spring.datasource.username=<your_mysql_username>
+spring.datasource.password=<your_mysql_password>
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL5Dialect
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.format_sql=true
+
+```
+
+### Then run:
+
+```
+        java -jar target/spring-boot-rest-example-0.5.0.war
+```
 
 ## REST APIs Endpoints
 ### Create a Work
